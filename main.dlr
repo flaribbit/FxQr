@@ -1,0 +1,18 @@
+[DLSimRunSpace]
+
+[Breakpoint]
+File=E:\CASIO\fx-9860G SDK\Project\MiniGame\Default.c
+Line=54
+Flags=00001012
+Sublevel=1
+
+[Breakpoint]
+File=E:\CASIO\fx-9860G SDK\Project\MiniGame\Default.c
+Line=54
+Flags=00001012
+Sublevel=2
+
+[Breakpoint]
+File=E:\CASIO\fx-9860G SDK\Project\MiniGame\Default.c
+Line=56
+Flags=00001010
