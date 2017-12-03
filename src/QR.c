@@ -43,12 +43,15 @@ void reedSolomon(int16_t data_codewords, int16_t data_offset, unsigned char mess
 		//printArrayBYTE("iter: ", error_codewords, errorcode);
 	}
 }
-
+/**
+ * [parseMessage description]
+ * @param freetext    [description]
+ * @param test_vector [description]
+ */
 void parseMessage(const char* freetext, unsigned char test_vector[]) {
 	unsigned char message[244] = {0};
 	int16_t message_length = strlen(freetext);
 	int16_t qr_version = -1;
-	
 	unsigned char* message_parameters;
 	int message_index;
 	
@@ -75,6 +78,7 @@ void parseMessage(const char* freetext, unsigned char test_vector[]) {
 	unsigned char mask_number;
 	
 	uint16_t i,j;
+	uint16_t x0,y0;
 	//∞Ê±æº∆À„//
 	for (i=0; i < 40; i++) {
 		int16_t capacity = codeword_parameters[i][1]*codeword_parameters[i][2] + codeword_parameters[i][3]*codeword_parameters[i][4] - 2;
@@ -367,19 +371,27 @@ void parseMessage(const char* freetext, unsigned char test_vector[]) {
 		for(i=0;i<max_pixels;i++){
 			for(j=0;j<max_pixels;j++){
 				if(image[i][j]==0){
-					Bdisp_SetPoint_VRAM(2*j,2*i,1);
-					Bdisp_SetPoint_VRAM(2*j+1,2*i,1);
-					Bdisp_SetPoint_VRAM(2*j,2*i+1,1);
-					Bdisp_SetPoint_VRAM(2*j+1,2*i+1,1);
+					x0=64-max_pixels+2*j;
+					y0=32-max_pixels+2*i;
+					Bdisp_SetPoint_VRAM(x0,y0,1);
+					Bdisp_SetPoint_VRAM(x0+1,y0,1);
+					Bdisp_SetPoint_VRAM(x0,y0+1,1);
+					Bdisp_SetPoint_VRAM(x0+1,y0+1,1);
+					//Bdisp_SetPoint_VRAM(2*j,2*i,1);
+					//Bdisp_SetPoint_VRAM(2*j+1,2*i,1);
+					//Bdisp_SetPoint_VRAM(2*j,2*i+1,1);
+					//Bdisp_SetPoint_VRAM(2*j+1,2*i+1,1);
 				}
 			}
 		}
 	}
 	else{
+		x0=64-.5*max_pixels;
+		y0=32-.5*max_pixels;
 		for(i=0;i<max_pixels;i++){
 			for(j=0;j<max_pixels;j++){
 				if(image[i][j]==0){
-					Bdisp_SetPoint_VRAM(j,i,1);
+					Bdisp_SetPoint_VRAM(x0+j,y0+i,1);
 				}
 			}
 		}

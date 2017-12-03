@@ -8,10 +8,9 @@
 /*                                                               */
 /*****************************************************************/
 #include "fxlib.h"
-#include "stdio.h"
-#include "string.h"
-#include "math.h"
-
+//#include "stdio.h"
+//#include "string.h"
+//#include "math.h"
 //****************************************************************************
 //  AddIn_main (Sample program main function)
 //
@@ -46,16 +45,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
- 
+
 int AddIn_main(int isAppli, unsigned short OptionNum)
 {
-    unsigned int k,len=0;
+	unsigned int k,len =0;
 	int i;
 	char str[300]="",low=0;
 	char cap[]={'A',0,'a',0};
-	double t[4]={0.2,0.3,3};
-	sprintf(str,"%f",pow(t[0]+t[1],t[2]));
-	Print(str);
 	
 	while(1){
 		Bdisp_AllClr_VRAM();
@@ -65,14 +61,15 @@ int AddIn_main(int isAppli, unsigned short OptionNum)
 		}
 		locate(17,8);Print((unsigned char*)(cap+low));
 		GetKey(&k);
-		if(k>=0x20&&k<=0x7e&&len<120){
+		if(k>=0x20&&k<=0xb9&&len<120){
 			if(low&&k>='A'&&k<='Z'){
 				k+=0x20;
 			}
-			if(k==0x88)k=0x2b;
-			if(k==0x89)k=0x2d;
-			if(k==0xa9)k=0x2a;
-			if(k==0xb9)k=0x2f;
+			if(k==0x89)k='+';
+			if(k==0x99)k='-';
+			if(k==0xa8)k='^';
+			if(k==0xa9)k='*';
+			if(k==0xb9)k='/';
 			str[len++]=k;
 			str[len]=0;
 		}
@@ -89,7 +86,10 @@ int AddIn_main(int isAppli, unsigned short OptionNum)
 		if(k==KEY_CTRL_EXE){
 			Bdisp_AllClr_VRAM();
 			parseMessage(str,0);
-			GetKey(&k);
+			while(1){
+				GetKey(&k);
+				if(k==KEY_CTRL_EXIT||k==KEY_CTRL_AC)break;
+			}
 		}
 		if(k==KEY_CTRL_F5){
 			low=2-low;
@@ -105,7 +105,6 @@ int AddIn_main(int isAppli, unsigned short OptionNum)
 	}
     return 1;
 }
-
 //****************************************************************************
 //**************                                              ****************
 //**************                 Notice!                      ****************

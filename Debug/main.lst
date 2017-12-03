@@ -1,4 +1,4 @@
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    1
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    1
 
 ************ OBJECT LISTING ************
 
@@ -16,567 +16,526 @@ SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
           main.c     8    /*                                                               */
           main.c     9    /*****************************************************************/
           main.c    10    #include "fxlib.h"
-          main.c    11    #include "stdio.h"
-          main.c    12    #include "string.h"
-          main.c    13    #include "math.h"
-          main.c    14    
-          main.c    15    //****************************************************************************
-          main.c    16    //  AddIn_main (Sample program main function)
-          main.c    17    //
-          main.c    18    //  param   :   isAppli   : 1 = This application is launched by MAIN MENU.
-          main.c    19    //                        : 0 = This application is launched by a strip in eACT application.
-          main.c    20    //
-          main.c    21    //              OptionNum : Strip number (0~3)
-          main.c    22    //                         (This parameter is only used when isAppli parameter is 0.)
-          main.c    23    //
-          main.c    24    //  retval  :   1 = No error / 0 = Error
-          main.c    25    //
-          main.c    26    //****************************************************************************
-          main.c    27    
-          main.c    28    /*
-          main.c    29     * Copyright (c) 2012-2014 Pavol Rusnak <stick@gk2.sk>
-          main.c    30     *
-          main.c    31     * Permission is hereby granted, free of charge, to any person obtaining a copy
-          main.c    32     * of this software and associated documentation files (the "Software"), to deal
-          main.c    33     * in the Software without restriction, including without limitation the rights
-          main.c    34     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-          main.c    35     * copies of the Software, and to permit persons to whom the Software is
-          main.c    36     * furnished to do so, subject to the following conditions:
-          main.c    37     *
-          main.c    38     * The above copyright notice and this permission notice shall be included in
-          main.c    39     * all copies or substantial portions of the Software.
-          main.c    40     *
-          main.c    41     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-          main.c    42     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-          main.c    43     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-          main.c    44     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-          main.c    45     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-          main.c    46     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-          main.c    47     * SOFTWARE.
-          main.c    48     */
-          main.c    49     
-          main.c    50    int AddIn_main(int isAppli, unsigned short OptionNum)
+          main.c    11    //#include "stdio.h"
+          main.c    12    //#include "string.h"
+          main.c    13    //#include "math.h"
+          main.c    14    //****************************************************************************
+          main.c    15    //  AddIn_main (Sample program main function)
+          main.c    16    //
+          main.c    17    //  param   :   isAppli   : 1 = This application is launched by MAIN MENU.
+          main.c    18    //                        : 0 = This application is launched by a strip in eACT application.
+          main.c    19    //
+          main.c    20    //              OptionNum : Strip number (0~3)
+          main.c    21    //                         (This parameter is only used when isAppli parameter is 0.)
+          main.c    22    //
+          main.c    23    //  retval  :   1 = No error / 0 = Error
+          main.c    24    //
+          main.c    25    //****************************************************************************
+          main.c    26    
+          main.c    27    /*
+          main.c    28     * Copyright (c) 2012-2014 Pavol Rusnak <stick@gk2.sk>
+          main.c    29     *
+          main.c    30     * Permission is hereby granted, free of charge, to any person obtaining a copy
+          main.c    31     * of this software and associated documentation files (the "Software"), to deal
+          main.c    32     * in the Software without restriction, including without limitation the rights
+          main.c    33     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+          main.c    34     * copies of the Software, and to permit persons to whom the Software is
+          main.c    35     * furnished to do so, subject to the following conditions:
+          main.c    36     *
+          main.c    37     * The above copyright notice and this permission notice shall be included in
+          main.c    38     * all copies or substantial portions of the Software.
+          main.c    39     *
+          main.c    40     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          main.c    41     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          main.c    42     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+          main.c    43     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+          main.c    44     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+          main.c    45     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+          main.c    46     * SOFTWARE.
+          main.c    47     */
+          main.c    48    
+          main.c    49    int AddIn_main(int isAppli, unsigned short OptionNum)
 P   00000000              _AddIn_main:                     ; function: AddIn_main
-                                                           ; frame size=396
+                                                           ; frame size=320
                                                            ; used runtime library name:
-                                                           ; __divlu, __slow_mvn, __addd, __quick_evn_mvn
+                                                           ; __divlu, __slow_mvn
+    00000000 9083                   MOV.W       L364,R0    ; H'FEC0
 
 
 
 
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    2
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    2
 
 
 SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
 
-    00000000 9091                   MOV.W       L445,R0    ; H'FEA0
-          main.c    51    {
-          main.c    52        unsigned int k,len=0;
+          main.c    50    {
+          main.c    51            unsigned int k,len =0;
     00000002 EE00                   MOV         #0,R14
-          main.c    53            int i;
-          main.c    54            char str[300]="",low=0;
-    00000004 D24A                   MOV.L       L445+10,R2 ; L388
+          main.c    52            int i;
+          main.c    53            char str[300]="",low=0;
+    00000004 D245                   MOV.L       L364+18,R2 ; L305
     00000006 3F0C                   ADD         R0,R15
-    00000008 D34A                   MOV.L       L445+14,R3 ; __slow_mvn
-    0000000A 6CE3                   MOV         R14,R12
-    0000000C 908C                   MOV.W       L445+2,R0  ; H'012C
+    00000008 D345                   MOV.L       L364+22,R3 ; __slow_mvn
+    0000000A 6DE3                   MOV         R14,R13
+    0000000C 907E                   MOV.W       L364+2,R0  ; H'012C
     0000000E 6AF3                   MOV         R15,R10
-    00000010 7A34                   ADD         #52,R10
+    00000010 7A14                   ADD         #20,R10
     00000012 61F3                   MOV         R15,R1
     00000014 430B                   JSR         @R3
-    00000016 7134                   ADD         #52,R1
-          main.c    55            char cap[]={'A',0,'a',0};
-    00000018 D247                   MOV.L       L445+18,R2 ; L391
+    00000016 7114                   ADD         #20,R1
+          main.c    54            char cap[]={'A',0,'a',0};
+    00000018 D242                   MOV.L       L364+26,R2 ; L308
     0000001A 60E3                   MOV         R14,R0
-    0000001C D345                   MOV.L       L445+14,R3 ; __slow_mvn
+    0000001C D340                   MOV.L       L364+22,R3 ; __slow_mvn
     0000001E 61F3                   MOV         R15,R1
     00000020 80F8                   MOV.B       R0,@(8,R15)
-    00000022 7130                   ADD         #48,R1
+    00000022 7110                   ADD         #16,R1
     00000024 430B                   JSR         @R3
     00000026 E004                   MOV         #4,R0
-          main.c    56            double t[4]={0.2,0.3,3};
-    00000028 D244                   MOV.L       L445+22,R2 ; L393
-    0000002A 6DF3                   MOV         R15,R13
-    0000002C D344                   MOV.L       L445+26,R3 ; __quick_evn_mvn
-    0000002E 61F3                   MOV         R15,R1
-    00000030 7D10                   ADD         #16,R13
-    00000032 7110                   ADD         #16,R1
-    00000034 430B                   JSR         @R3
-    00000036 E020                   MOV         #32,R0
-          main.c    57            sprintf(str,"%f",pow(t[0]+t[1],t[2]));
-    00000038 D042                   MOV.L       L445+30,R0 ; __addd
-    0000003A 7FF8                   ADD         #-8,R15
-    0000003C 51D5                   MOV.L       @(20,R13),R1
-    0000003E 2F16                   MOV.L       R1,@-R15
-    00000040 51D4                   MOV.L       @(16,R13),R1
-    00000042 2F16                   MOV.L       R1,@-R15
-    00000044 7FF8                   ADD         #-8,R15
-    00000046 53D1                   MOV.L       @(4,R13),R3
-    00000048 2F36                   MOV.L       R3,@-R15
-    0000004A 63D2                   MOV.L       @R13,R3
-    0000004C 2F36                   MOV.L       R3,@-R15
-    0000004E 51D3                   MOV.L       @(12,R13),R1
-    00000050 2F16                   MOV.L       R1,@-R15
-    00000052 51D2                   MOV.L       @(8,R13),R1
-    00000054 2F16                   MOV.L       R1,@-R15
-    00000056 63F3                   MOV         R15,R3
-    00000058 7310                   ADD         #16,R3
-    0000005A 400B                   JSR         @R0
-    0000005C 2F36                   MOV.L       R3,@-R15
-    0000005E E110                   MOV         #16,R1
-    00000060 D339                   MOV.L       L445+34,R3 ; _pow
-    00000062 31FC                   ADD         R15,R1
+    00000028 DB3F                   MOV.L       L364+30,R11; _Print
+    0000002A DC40                   MOV.L       L364+34,R12; _locate
+          main.c    55            
+          main.c    56            while(1){
+    0000002C              L339:                             
+          main.c    57                    Bdisp_AllClr_VRAM();
+    0000002C D340                   MOV.L       L364+38,R3 ; _Bdisp_AllClr_VRAM
+    0000002E 430B                   JSR         @R3
+    00000030 0009                   NOP
+          main.c    58                    locate(1,1);Print((unsigned char*)"FxQR");
+    00000032 E501                   MOV         #1,R5
+    00000034 4C0B                   JSR         @R12
+    00000036 6453                   MOV         R5,R4
+    00000038 D43E                   MOV.L       L364+42,R4 ; L310
+    0000003A 4B0B                   JSR         @R11
+    0000003C 0009                   NOP
+    0000003E E800                   MOV         #0,R8
+    00000040 D33D                   MOV.L       L364+46,R3 ; __divlu
+    00000042 E902                   MOV         #2,R9
+          main.c    59                    for(i=0;i<=len/21;i++){
+    00000044 1FE1                   MOV.L       R14,@(4,R15)
+    00000046 61D3                   MOV         R13,R1
+    00000048 38AC                   ADD         R10,R8
+    0000004A 430B                   JSR         @R3
+    0000004C E015                   MOV         #21,R0
+    0000004E E300                   MOV         #0,R3
+    00000050 3306                   CMP/HI      R0,R3
+    00000052 8D0D                   BT/S        L340
+    00000054 1F03                   MOV.L       R0,@(12,R15)
+    00000056              L341:                             
+          main.c    60                            locate(1,2+i);Print(str+i*21);
+    00000056 6593                   MOV         R9,R5
+    00000058 4C0B                   JSR         @R12
 
 
 
 
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    3
-
-
-SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
-
-    00000064 430B                   JSR         @R3
-    00000066 2F16                   MOV.L       R1,@-R15
-    00000068 D238                   MOV.L       L445+38,R2 ; L394
-    0000006A 7F14                   ADD         #20,R15
-    0000006C D338                   MOV.L       L445+42,R3 ; _sprintf
-    0000006E 2F26                   MOV.L       R2,@-R15
-    00000070 430B                   JSR         @R3
-    00000072 64A3                   MOV         R10,R4
-          main.c    58            Print(str);
-    00000074 DD37                   MOV.L       L445+46,R13; _Print
-    00000076 7F0C                   ADD         #12,R15
-    00000078 4D0B                   JSR         @R13
-    0000007A 64A3                   MOV         R10,R4
-    0000007C DB36                   MOV.L       L445+50,R11; _locate
-          main.c    59            
-          main.c    60            while(1){
-    0000007E              L426:                             
-          main.c    61                    Bdisp_AllClr_VRAM();
-    0000007E D337                   MOV.L       L445+54,R3 ; _Bdisp_AllClr_VRAM
-    00000080 430B                   JSR         @R3
-    00000082 0009                   NOP
-          main.c    62                    locate(1,1);Print((unsigned char*)"FxQR");
-    00000084 E501                   MOV         #1,R5
-    00000086 4B0B                   JSR         @R11
-    00000088 6453                   MOV         R5,R4
-    0000008A D435                   MOV.L       L445+58,R4 ; L396
-    0000008C 4D0B                   JSR         @R13
-    0000008E 0009                   NOP
-          main.c    63                    for(i=0;i<=len/21;i++){
-    00000090 1FE1                   MOV.L       R14,@(4,R15)
-    00000092 E900                   MOV         #0,R9
-    00000094 D333                   MOV.L       L445+62,R3 ; __divlu
-    00000096 E802                   MOV         #2,R8
-    00000098 39AC                   ADD         R10,R9
-    0000009A 61C3                   MOV         R12,R1
-    0000009C 430B                   JSR         @R3
-    0000009E E015                   MOV         #21,R0
-    000000A0 E300                   MOV         #0,R3
-    000000A2 3306                   CMP/HI      R0,R3
-    000000A4 8D0D                   BT/S        L427
-    000000A6 1F03                   MOV.L       R0,@(12,R15)
-    000000A8              L428:                             
-          main.c    64                            locate(1,2+i);Print(str+i*21);
-    000000A8 6583                   MOV         R8,R5
-    000000AA 4B0B                   JSR         @R11
-    000000AC E401                   MOV         #1,R4
-    000000AE 4D0B                   JSR         @R13
-    000000B0 6493                   MOV         R9,R4
-    000000B2 7915                   ADD         #21,R9
-    000000B4 53F1                   MOV.L       @(4,R15),R3
-    000000B6 7301                   ADD         #1,R3
-    000000B8 1F31                   MOV.L       R3,@(4,R15)
-    000000BA 52F3                   MOV.L       @(12,R15),R2
-    000000BC 3326                   CMP/HI      R2,R3
-    000000BE 8FF3                   BF/S        L428
-    000000C0 7801                   ADD         #1,R8
-    000000C2              L427:                             
-
-
-
-
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    4
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    3
 
 
 SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
 
-          main.c    65                    }
-          main.c    66                    locate(17,8);Print((unsigned char*)(cap+low));
-    000000C2 E508                   MOV         #8,R5
-    000000C4 4B0B                   JSR         @R11
-    000000C6 E411                   MOV         #17,R4
-    000000C8 84F8                   MOV.B       @(8,R15),R0
-    000000CA 64F3                   MOV         R15,R4
-    000000CC 7430                   ADD         #48,R4
-    000000CE 4D0B                   JSR         @R13
-    000000D0 340C                   ADD         R0,R4
-          main.c    67                    GetKey(&k);
-    000000D2 D325                   MOV.L       L445+66,R3 ; _GetKey
-    000000D4 430B                   JSR         @R3
-    000000D6 64F3                   MOV         R15,R4
-          main.c    68                    if(k>=0x20&&k<=0x7e&&len<120){
-    000000D8 63F2                   MOV.L       @R15,R3
-    000000DA E220                   MOV         #32,R2
-    000000DC 3322                   CMP/HS      R2,R3
-    000000DE 8B57                   BF          L429
-    000000E0 61F2                   MOV.L       @R15,R1
-    000000E2 E37E                   MOV         #126,R3
-    000000E4 3136                   CMP/HI      R3,R1
-    000000E6 8953                   BT          L429
-    000000E8 E178                   MOV         #120,R1
-    000000EA 3C12                   CMP/HS      R1,R12
-    000000EC 8950                   BT          L429
-          main.c    69                            if(low&&k>='A'&&k<='Z'){
-    000000EE 84F8                   MOV.B       @(8,R15),R0
-    000000F0 2008                   TST         R0,R0
-    000000F2 890A                   BT          L430
-    000000F4 62F2                   MOV.L       @R15,R2
-    000000F6 E341                   MOV         #65,R3
-    000000F8 3232                   CMP/HS      R3,R2
-    000000FA 8B06                   BF          L430
-    000000FC 61F2                   MOV.L       @R15,R1
-    000000FE E25A                   MOV         #90,R2
-    00000100 3126                   CMP/HI      R2,R1
-    00000102 8902                   BT          L430
-          main.c    70                                    k+=0x20;
-    00000104 63F2                   MOV.L       @R15,R3
-    00000106 7320                   ADD         #32,R3
-    00000108 2F32                   MOV.L       R3,@R15
-    0000010A              L430:                             
-          main.c    71                            }
-          main.c    72                            if(k==0x88)k=0x2b;
-    0000010A 920E                   MOV.W       L445+4,R2  ; H'0088
-    0000010C 61F2                   MOV.L       @R15,R1
-    0000010E 3120                   CMP/EQ      R2,R1
-    00000110 8B01                   BF          L431
-    00000112 E32B                   MOV         #43,R3
-    00000114 2F32                   MOV.L       R3,@R15
-    00000116              L431:                             
-          main.c    73                            if(k==0x89)k=0x2d;
-    00000116 9209                   MOV.W       L445+6,R2  ; H'0089
-    00000118 61F2                   MOV.L       @R15,R1
-    0000011A 3120                   CMP/EQ      R2,R1
-    0000011C 8B01                   BF          L432
+    0000005A E401                   MOV         #1,R4
+    0000005C 4B0B                   JSR         @R11
+    0000005E 6483                   MOV         R8,R4
+    00000060 53F1                   MOV.L       @(4,R15),R3
+    00000062 7815                   ADD         #21,R8
+    00000064 7301                   ADD         #1,R3
+    00000066 1F31                   MOV.L       R3,@(4,R15)
+    00000068 52F3                   MOV.L       @(12,R15),R2
+    0000006A 3326                   CMP/HI      R2,R3
+    0000006C 8FF3                   BF/S        L341
+    0000006E 7901                   ADD         #1,R9
+    00000070              L340:                             
+          main.c    61                    }
+          main.c    62                    locate(17,8);Print((unsigned char*)(cap+low));
+    00000070 E508                   MOV         #8,R5
+    00000072 4C0B                   JSR         @R12
+    00000074 E411                   MOV         #17,R4
+    00000076 64F3                   MOV         R15,R4
+    00000078 84F8                   MOV.B       @(8,R15),R0
+    0000007A 7410                   ADD         #16,R4
+    0000007C 4B0B                   JSR         @R11
+    0000007E 340C                   ADD         R0,R4
+          main.c    63                    GetKey(&k);
+    00000080 D32E                   MOV.L       L364+50,R3 ; _GetKey
+    00000082 430B                   JSR         @R3
+    00000084 64F3                   MOV         R15,R4
+          main.c    64                    if(k>=0x20&&k<=0xb9&&len<120){
+    00000086 E220                   MOV         #32,R2
+    00000088 63F2                   MOV.L       @R15,R3
+    0000008A 3322                   CMP/HS      R2,R3
+    0000008C 8B38                   BF          L342
+    0000008E 933E                   MOV.W       L364+4,R3  ; H'00B9
+    00000090 61F2                   MOV.L       @R15,R1
+    00000092 3136                   CMP/HI      R3,R1
+    00000094 8934                   BT          L342
+    00000096 E178                   MOV         #120,R1
+    00000098 3D12                   CMP/HS      R1,R13
+    0000009A 8931                   BT          L342
+          main.c    65                            if(low&&k>='A'&&k<='Z'){
+    0000009C 84F8                   MOV.B       @(8,R15),R0
+    0000009E 2008                   TST         R0,R0
+    000000A0 890A                   BT          L343
+    000000A2 E341                   MOV         #65,R3
+    000000A4 62F2                   MOV.L       @R15,R2
+    000000A6 3232                   CMP/HS      R3,R2
+    000000A8 8B06                   BF          L343
+    000000AA E25A                   MOV         #90,R2
+    000000AC 61F2                   MOV.L       @R15,R1
+    000000AE 3126                   CMP/HI      R2,R1
+    000000B0 8902                   BT          L343
+          main.c    66                                    k+=0x20;
+    000000B2 63F2                   MOV.L       @R15,R3
+    000000B4 7320                   ADD         #32,R3
+    000000B6 2F32                   MOV.L       R3,@R15
+    000000B8              L343:                             
+          main.c    67                            }
+          main.c    68                            if(k==0x89)k='+';
 
 
 
 
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    5
-
-
-SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
-
-    0000011E E32D                   MOV         #45,R3
-    00000120 2F32                   MOV.L       R3,@R15
-    00000122              L432:                             
-          main.c    74                            if(k==0xa9)k=0x2a;
-    00000122 A023                   BRA         L444
-    00000124 0009                   NOP
-    00000126              L445:                             
-    00000126 FEA0                   .DATA.W     H'FEA0
-    00000128 012C                   .DATA.W     H'012C
-    0000012A 0088                   .DATA.W     H'0088
-    0000012C 0089                   .DATA.W     H'0089
-    0000012E 0000                   .DATA.W     0
-    00000130 <00000000>             .DATA.L     L388
-    00000134 <00000000>             .DATA.L     __slow_mvn
-    00000138 <00000000>             .DATA.L     L391
-    0000013C <00000000>             .DATA.L     L393
-    00000140 <00000000>             .DATA.L     __quick_evn_mvn
-    00000144 <00000000>             .DATA.L     __addd
-    00000148 <00000000>             .DATA.L     _pow
-    0000014C <00000000>             .DATA.L     L394
-    00000150 <00000000>             .DATA.L     _sprintf
-    00000154 <00000000>             .DATA.L     _Print
-    00000158 <00000000>             .DATA.L     _locate
-    0000015C <00000000>             .DATA.L     _Bdisp_AllClr_VRAM
-    00000160 <00000000>             .DATA.L     L396
-    00000164 <00000000>             .DATA.L     __divlu
-    00000168 <00000000>             .DATA.L     _GetKey
-    0000016C              L444:                             
-    0000016C 9267                   MOV.W       L446,R2    ; H'00A9
-    0000016E 61F2                   MOV.L       @R15,R1
-    00000170 3120                   CMP/EQ      R2,R1
-    00000172 8B01                   BF          L433
-    00000174 E32A                   MOV         #42,R3
-    00000176 2F32                   MOV.L       R3,@R15
-    00000178              L433:                             
-          main.c    75                            if(k==0xb9)k=0x2f;
-    00000178 9262                   MOV.W       L446+2,R2  ; H'00B9
-    0000017A 61F2                   MOV.L       @R15,R1
-    0000017C 3120                   CMP/EQ      R2,R1
-    0000017E 8B01                   BF          L434
-    00000180 E32F                   MOV         #47,R3
-    00000182 2F32                   MOV.L       R3,@R15
-    00000184              L434:                             
-          main.c    76                            str[len++]=k;
-    00000184 63F2                   MOV.L       @R15,R3
-    00000186 60C3                   MOV         R12,R0
-    00000188 0A34                   MOV.B       R3,@(R0,R10)
-    0000018A 7C01                   ADD         #1,R12
-          main.c    77                            str[len]=0;
-    0000018C 60C3                   MOV         R12,R0
-    0000018E 0AE4                   MOV.B       R14,@(R0,R10)
-    00000190              L429:                             
-          main.c    78                    }
-          main.c    79                    if(k==KEY_CTRL_DEL&&len>0){
-    00000190 9357                   MOV.W       L446+4,R3  ; H'7549
-    00000192 62F2                   MOV.L       @R15,R2
-    00000194 3230                   CMP/EQ      R3,R2
-
-
-
-
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    6
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    4
 
 
 SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
 
-    00000196 8B05                   BF          L435
-    00000198 E200                   MOV         #0,R2
-    0000019A 3C26                   CMP/HI      R2,R12
-    0000019C 8B02                   BF          L435
-          main.c    80                            len--;
-    0000019E 7CFF                   ADD         #-1,R12
-          main.c    81                            str[len]=0;
-    000001A0 60C3                   MOV         R12,R0
-    000001A2 0AE4                   MOV.B       R14,@(R0,R10)
-    000001A4              L435:                             
-          main.c    82                    }
-          main.c    83                    if(k==KEY_CTRL_AC){
-    000001A4 934E                   MOV.W       L446+6,R3  ; H'753F
-    000001A6 62F2                   MOV.L       @R15,R2
-    000001A8 3230                   CMP/EQ      R3,R2
-    000001AA 8B0B                   BF          L436
-          main.c    84                            for(i=0;i<len;i++){
-    000001AC 65E3                   MOV         R14,R5
-    000001AE E400                   MOV         #0,R4
-    000001B0 E200                   MOV         #0,R2
-    000001B2 32C2                   CMP/HS      R12,R2
-    000001B4 8D05                   BT/S        L437
-    000001B6 34AC                   ADD         R10,R4
-    000001B8              L438:                             
-          main.c    85                                    str[i]=0;
-    000001B8 24E0                   MOV.B       R14,@R4
-    000001BA 7501                   ADD         #1,R5
-    000001BC 35C2                   CMP/HS      R12,R5
-    000001BE 8FFB                   BF/S        L438
-    000001C0 7401                   ADD         #1,R4
-    000001C2              L437:                             
-          main.c    86                            }
-          main.c    87                            len=0;
-    000001C2 6CE3                   MOV         R14,R12
-    000001C4              L436:                             
-          main.c    88                    }
-          main.c    89                    if(k==KEY_CTRL_EXE){
-    000001C4 923F                   MOV.W       L446+8,R2  ; H'7534
-    000001C6 63F2                   MOV.L       @R15,R3
-    000001C8 3320                   CMP/EQ      R2,R3
-    000001CA 8B09                   BF          L439
-          main.c    90                            Bdisp_AllClr_VRAM();
-    000001CC D31F                   MOV.L       L446+14,R3 ; _Bdisp_AllClr_VRAM
-    000001CE 430B                   JSR         @R3
-    000001D0 0009                   NOP
-          main.c    91                            parseMessage(str,0);
-    000001D2 E500                   MOV         #0,R5
-    000001D4 D21E                   MOV.L       L446+18,R2 ; _parseMessage
-    000001D6 420B                   JSR         @R2
-    000001D8 64A3                   MOV         R10,R4
-          main.c    92                            GetKey(&k);
-    000001DA D31E                   MOV.L       L446+22,R3 ; _GetKey
-    000001DC 430B                   JSR         @R3
-    000001DE 64F3                   MOV         R15,R4
-    000001E0              L439:                             
+    000000B8 922A                   MOV.W       L364+6,R2  ; H'0089
+    000000BA 61F2                   MOV.L       @R15,R1
+    000000BC 3120                   CMP/EQ      R2,R1
+    000000BE 8B01                   BF          L344
+    000000C0 E32B                   MOV         #43,R3
+    000000C2 2F32                   MOV.L       R3,@R15
+    000000C4              L344:                             
+          main.c    69                            if(k==0x99)k='-';
+    000000C4 9225                   MOV.W       L364+8,R2  ; H'0099
+    000000C6 61F2                   MOV.L       @R15,R1
+    000000C8 3120                   CMP/EQ      R2,R1
+    000000CA 8B01                   BF          L345
+    000000CC E32D                   MOV         #45,R3
+    000000CE 2F32                   MOV.L       R3,@R15
+    000000D0              L345:                             
+          main.c    70                            if(k==0xa8)k='^';
+    000000D0 9220                   MOV.W       L364+10,R2 ; H'00A8
+    000000D2 61F2                   MOV.L       @R15,R1
+    000000D4 3120                   CMP/EQ      R2,R1
+    000000D6 8B01                   BF          L346
+    000000D8 E35E                   MOV         #94,R3
+    000000DA 2F32                   MOV.L       R3,@R15
+    000000DC              L346:                             
+          main.c    71                            if(k==0xa9)k='*';
+    000000DC 921B                   MOV.W       L364+12,R2 ; H'00A9
+    000000DE 61F2                   MOV.L       @R15,R1
+    000000E0 3120                   CMP/EQ      R2,R1
+    000000E2 8B01                   BF          L347
+    000000E4 E32A                   MOV         #42,R3
+    000000E6 2F32                   MOV.L       R3,@R15
+    000000E8              L347:                             
+          main.c    72                            if(k==0xb9)k='/';
+    000000E8 9211                   MOV.W       L364+4,R2  ; H'00B9
+    000000EA 61F2                   MOV.L       @R15,R1
+    000000EC 3120                   CMP/EQ      R2,R1
+    000000EE 8B01                   BF          L348
+    000000F0 E32F                   MOV         #47,R3
+    000000F2 2F32                   MOV.L       R3,@R15
+    000000F4              L348:                             
+          main.c    73                            str[len++]=k;
+    000000F4 63F2                   MOV.L       @R15,R3
+    000000F6 60D3                   MOV         R13,R0
+    000000F8 0A34                   MOV.B       R3,@(R0,R10)
+    000000FA 7D01                   ADD         #1,R13
+          main.c    74                            str[len]=0;
+    000000FC 60D3                   MOV         R13,R0
+    000000FE 0AE4                   MOV.B       R14,@(R0,R10)
+    00000100              L342:                             
+          main.c    75                    }
+          main.c    76                    if(k==KEY_CTRL_DEL&&len>0){
+    00000100 930A                   MOV.W       L364+14,R3 ; H'7549
+    00000102 62F2                   MOV.L       @R15,R2
+    00000104 3230                   CMP/EQ      R3,R2
+    00000106 A01B                   BRA         L363
+    00000108 0009                   NOP
+    0000010A              L364:                             
+    0000010A FEC0                   .DATA.W     H'FEC0
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000010C 012C                   .DATA.W     H'012C
+    0000010E 00B9                   .DATA.W     H'00B9
+    00000110 0089                   .DATA.W     H'0089
+    00000112 0099                   .DATA.W     H'0099
+    00000114 00A8                   .DATA.W     H'00A8
+    00000116 00A9                   .DATA.W     H'00A9
+    00000118 7549                   .DATA.W     H'7549
+    0000011A 0000                   .DATA.W     0
+    0000011C <00000000>             .DATA.L     L305
+    00000120 <00000000>             .DATA.L     __slow_mvn
+    00000124 <00000000>             .DATA.L     L308
+    00000128 <00000000>             .DATA.L     _Print
+    0000012C <00000000>             .DATA.L     _locate
+    00000130 <00000000>             .DATA.L     _Bdisp_AllClr_VRAM
+    00000134 <00000000>             .DATA.L     L310
+    00000138 <00000000>             .DATA.L     __divlu
+    0000013C <00000000>             .DATA.L     _GetKey
+    00000140              L363:                             
+    00000140 8B05                   BF          L349
+    00000142 E200                   MOV         #0,R2
+    00000144 3D26                   CMP/HI      R2,R13
+    00000146 8B02                   BF          L349
+          main.c    77                            len--;
+    00000148 7DFF                   ADD         #-1,R13
+          main.c    78                            str[len]=0;
+    0000014A 60D3                   MOV         R13,R0
+    0000014C 0AE4                   MOV.B       R14,@(R0,R10)
+    0000014E              L349:                             
+          main.c    79                    }
+          main.c    80                    if(k==KEY_CTRL_AC){
+    0000014E 9353                   MOV.W       L365,R3    ; H'753F
+    00000150 62F2                   MOV.L       @R15,R2
+    00000152 3230                   CMP/EQ      R3,R2
+    00000154 8B0B                   BF          L350
+          main.c    81                            for(i=0;i<len;i++){
+    00000156 65E3                   MOV         R14,R5
+    00000158 E400                   MOV         #0,R4
+    0000015A E200                   MOV         #0,R2
+    0000015C 32D2                   CMP/HS      R13,R2
+    0000015E 8D05                   BT/S        L351
+    00000160 34AC                   ADD         R10,R4
+    00000162              L352:                             
+    00000162 7501                   ADD         #1,R5
+          main.c    82                                    str[i]=0;
+    00000164 24E0                   MOV.B       R14,@R4
+    00000166 35D2                   CMP/HS      R13,R5
+    00000168 8FFB                   BF/S        L352
+    0000016A 7401                   ADD         #1,R4
+    0000016C              L351:                             
+          main.c    83                            }
+          main.c    84                            len=0;
+    0000016C 6DE3                   MOV         R14,R13
+    0000016E              L350:                             
+          main.c    85                    }
+          main.c    86                    if(k==KEY_CTRL_EXE){
+    0000016E 9244                   MOV.W       L365+2,R2  ; H'7534
+    00000170 63F2                   MOV.L       @R15,R3
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    6
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000172 3320                   CMP/EQ      R2,R3
+    00000174 8B11                   BF          L353
+          main.c    87                            Bdisp_AllClr_VRAM();
+    00000176 D323                   MOV.L       L365+12,R3 ; _Bdisp_AllClr_VRAM
+    00000178 430B                   JSR         @R3
+    0000017A 0009                   NOP
+          main.c    88                            parseMessage(str,0);
+    0000017C D222                   MOV.L       L365+16,R2 ; _parseMessage
+    0000017E E500                   MOV         #0,R5
+    00000180 420B                   JSR         @R2
+    00000182 64A3                   MOV         R10,R4
+          main.c    89                            while(1){
+    00000184              L355:                             
+          main.c    90                                    GetKey(&k);
+    00000184 D221                   MOV.L       L365+20,R2 ; _GetKey
+    00000186 420B                   JSR         @R2
+    00000188 64F3                   MOV         R15,R4
+          main.c    91                                    if(k==KEY_CTRL_EXIT||k==KEY_CTRL_AC)break;
+    0000018A 9337                   MOV.W       L365+4,R3  ; H'7532
+    0000018C 62F2                   MOV.L       @R15,R2
+    0000018E 3230                   CMP/EQ      R3,R2
+    00000190 8903                   BT          L353
+    00000192 9231                   MOV.W       L365,R2    ; H'753F
+    00000194 61F2                   MOV.L       @R15,R1
+    00000196 3120                   CMP/EQ      R2,R1
+    00000198 8BF4                   BF          L355
+    0000019A              L353:                             
+          main.c    92                            }
           main.c    93                    }
           main.c    94                    if(k==KEY_CTRL_F5){
-
-
-
-
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    7
-
-
-SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
-
-    000001E0 9232                   MOV.W       L446+10,R2 ; H'753D
-    000001E2 63F2                   MOV.L       @R15,R3
-    000001E4 3320                   CMP/EQ      R2,R3
-    000001E6 8B04                   BF          L440
+    0000019A 9330                   MOV.W       L365+6,R3  ; H'753D
+    0000019C 62F2                   MOV.L       @R15,R2
+    0000019E 3230                   CMP/EQ      R3,R2
+    000001A0 8B04                   BF          L359
           main.c    95                            low=2-low;
-    000001E8 84F8                   MOV.B       @(8,R15),R0
-    000001EA 6303                   MOV         R0,R3
-    000001EC E002                   MOV         #2,R0
-    000001EE 3038                   SUB         R3,R0
-    000001F0 80F8                   MOV.B       R0,@(8,R15)
-    000001F2              L440:                             
+    000001A2 84F8                   MOV.B       @(8,R15),R0
+    000001A4 6203                   MOV         R0,R2
+    000001A6 E002                   MOV         #2,R0
+    000001A8 3028                   SUB         R2,R0
+    000001AA 80F8                   MOV.B       R0,@(8,R15)
+    000001AC              L359:                             
           main.c    96                    }
           main.c    97                    if(k==KEY_CTRL_F6){
-    000001F2 932A                   MOV.W       L446+12,R3 ; H'753E
-    000001F4 62F2                   MOV.L       @R15,R2
-    000001F6 3230                   CMP/EQ      R3,R2
-    000001F8 8901                   BT          L447
-    000001FA AF40                   BRA         L426
-    000001FC 0009                   NOP
-    000001FE              L447:                             
+    000001AC 9328                   MOV.W       L365+8,R3  ; H'753E
+    000001AE 62F2                   MOV.L       @R15,R2
+    000001B0 3230                   CMP/EQ      R3,R2
+    000001B2 8901                   BT          L366
+    000001B4 AF3A                   BRA         L339
+    000001B6 0009                   NOP
+    000001B8              L366:                             
           main.c    98                            Bdisp_AllClr_VRAM();
-    000001FE D213                   MOV.L       L446+14,R2 ; _Bdisp_AllClr_VRAM
-    00000200 420B                   JSR         @R2
-    00000202 0009                   NOP
+    000001B8 D212                   MOV.L       L365+12,R2 ; _Bdisp_AllClr_VRAM
+    000001BA 420B                   JSR         @R2
+    000001BC 0009                   NOP
           main.c    99                            locate(1,1);Print((unsigned char*)"About");
-    00000204 E501                   MOV         #1,R5
-    00000206 4B0B                   JSR         @R11
-    00000208 6453                   MOV         R5,R4
-    0000020A D413                   MOV.L       L446+26,R4 ; L407
-    0000020C 4D0B                   JSR         @R13
-    0000020E 0009                   NOP
-          main.c   100                            locate(1,2);Print((unsigned char*)"Orig:github.com");
-    00000210 E502                   MOV         #2,R5
-    00000212 4B0B                   JSR         @R11
-    00000214 E401                   MOV         #1,R4
-    00000216 D411                   MOV.L       L446+30,R4 ; L408
-    00000218 4D0B                   JSR         @R13
-    0000021A 0009                   NOP
-          main.c   101                            locate(5,3);Print((unsigned char*)"/bjguillot/qr");
-    0000021C E503                   MOV         #3,R5
-    0000021E 4B0B                   JSR         @R11
-    00000220 E405                   MOV         #5,R4
-    00000222 D40F                   MOV.L       L446+34,R4 ; L409
-    00000224 4D0B                   JSR         @R13
-    00000226 0009                   NOP
-          main.c   102                            locate(1,4);Print((unsigned char*)"ModifiedBy 1149761294");
-    00000228 E504                   MOV         #4,R5
-    0000022A 4B0B                   JSR         @R11
-    0000022C E401                   MOV         #1,R4
-    0000022E D40D                   MOV.L       L446+38,R4 ; L410
-    00000230 4D0B                   JSR         @R13
-    00000232 0009                   NOP
-          main.c   103                            GetKey(&k);
-    00000234 D307                   MOV.L       L446+22,R3 ; _GetKey
-    00000236 430B                   JSR         @R3
-    00000238 64F3                   MOV         R15,R4
-    0000023A AF20                   BRA         L426
+    000001BE E501                   MOV         #1,R5
+    000001C0 4C0B                   JSR         @R12
 
 
 
 
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    8
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    7
 
 
 SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
 
-    0000023C 0009                   NOP
-    0000023E              L446:                             
-    0000023E 00A9                   .DATA.W     H'00A9
-    00000240 00B9                   .DATA.W     H'00B9
-    00000242 7549                   .DATA.W     H'7549
-    00000244 753F                   .DATA.W     H'753F
-    00000246 7534                   .DATA.W     H'7534
-    00000248 753D                   .DATA.W     H'753D
-    0000024A 753E                   .DATA.W     H'753E
-    0000024C <00000000>             .DATA.L     _Bdisp_AllClr_VRAM
-    00000250 <00000000>             .DATA.L     _parseMessage
-    00000254 <00000000>             .DATA.L     _GetKey
-    00000258 <00000000>             .DATA.L     L407
-    0000025C <00000000>             .DATA.L     L408
-    00000260 <00000000>             .DATA.L     L409
-    00000264 <00000000>             .DATA.L     L410
+    000001C2 6453                   MOV         R5,R4
+    000001C4 D412                   MOV.L       L365+24,R4 ; L322
+    000001C6 4B0B                   JSR         @R11
+    000001C8 0009                   NOP
+          main.c   100                            locate(1,2);Print((unsigned char*)"Orig:github.com");
+    000001CA E502                   MOV         #2,R5
+    000001CC 4C0B                   JSR         @R12
+    000001CE E401                   MOV         #1,R4
+    000001D0 D410                   MOV.L       L365+28,R4 ; L323
+    000001D2 4B0B                   JSR         @R11
+    000001D4 0009                   NOP
+          main.c   101                            locate(5,3);Print((unsigned char*)"/bjguillot/qr");
+    000001D6 E503                   MOV         #3,R5
+    000001D8 4C0B                   JSR         @R12
+    000001DA E405                   MOV         #5,R4
+    000001DC D40E                   MOV.L       L365+32,R4 ; L324
+    000001DE 4B0B                   JSR         @R11
+    000001E0 0009                   NOP
+          main.c   102                            locate(1,4);Print((unsigned char*)"ModifiedBy 1149761294");
+    000001E2 E504                   MOV         #4,R5
+    000001E4 4C0B                   JSR         @R12
+    000001E6 E401                   MOV         #1,R4
+    000001E8 D40C                   MOV.L       L365+36,R4 ; L325
+    000001EA 4B0B                   JSR         @R11
+    000001EC 0009                   NOP
+          main.c   103                            GetKey(&k);
+    000001EE D307                   MOV.L       L365+20,R3 ; _GetKey
+    000001F0 430B                   JSR         @R3
+    000001F2 64F3                   MOV         R15,R4
+    000001F4 AF1A                   BRA         L339
+    000001F6 0009                   NOP
+    000001F8              L365:                             
+    000001F8 753F                   .DATA.W     H'753F
+    000001FA 7534                   .DATA.W     H'7534
+    000001FC 7532                   .DATA.W     H'7532
+    000001FE 753D                   .DATA.W     H'753D
+    00000200 753E                   .DATA.W     H'753E
+    00000202 0000                   .DATA.W     0
+    00000204 <00000000>             .DATA.L     _Bdisp_AllClr_VRAM
+    00000208 <00000000>             .DATA.L     _parseMessage
+    0000020C <00000000>             .DATA.L     _GetKey
+    00000210 <00000000>             .DATA.L     L322
+    00000214 <00000000>             .DATA.L     L323
+    00000218 <00000000>             .DATA.L     L324
+    0000021C <00000000>             .DATA.L     L325
           main.c   104                    }
           main.c   105            }
           main.c   106        return 1;
           main.c   107    }
-          main.c   108    
-          main.c   109    //****************************************************************************
-          main.c   110    //**************                                              ****************
-          main.c   111    //**************                 Notice!                      ****************
-          main.c   112    //**************                                              ****************
-          main.c   113    //**************  Please do not change the following source.  ****************
-          main.c   114    //**************                                              ****************
-          main.c   115    //****************************************************************************
-          main.c   116    
-          main.c   117    #pragma section _BR_Size
-          main.c   118    unsigned long BR_Size;
-          main.c   119    #pragma section
-          main.c   120    
-          main.c   121    #pragma section _TOP
-          main.c   122    
-          main.c   123    //****************************************************************************
-          main.c   124    //  InitializeSystem
-          main.c   125    //
-          main.c   126    //  param   :   isAppli   : 1 = Application / 0 = eActivity
-          main.c   127    //              OptionNum : Option Number (only eActivity)
-          main.c   128    //
-          main.c   129    //  retval  :   1 = No error / 0 = Error
-          main.c   130    //
-          main.c   131    //****************************************************************************
-          main.c   132    int InitializeSystem(int isAppli, unsigned short OptionNum)
-P_T 00000000              _InitializeSystem:               ; function: InitializeSystem
-                                                           ; frame size=0
-          main.c   133    {
-          main.c   134        return INIT_ADDIN_APPLICATION(isAppli, OptionNum);
-    00000000 D301                   MOV.L       L448+2,R3  ; _INIT_ADDIN_APPLICATION
-    00000002 432B                   JMP         @R3
-    00000004 0009                   NOP
-    00000006              L448:                             
-    00000006 0000                   .DATA.W     0
-    00000008 <00000000>             .DATA.L     _INIT_ADDIN_APPLICATION
-          main.c   135    }
-          main.c   136    
+          main.c   108    //****************************************************************************
+          main.c   109    //**************                                              ****************
+          main.c   110    //**************                 Notice!                      ****************
+          main.c   111    //**************                                              ****************
+          main.c   112    //**************  Please do not change the following source.  ****************
+          main.c   113    //**************                                              ****************
+          main.c   114    //****************************************************************************
+          main.c   115    
 
 
 
 
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    9
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    8
 
 
 SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
 
-          main.c   137    #pragma section
-C   00000000              L388:
+          main.c   116    #pragma section _BR_Size
+          main.c   117    unsigned long BR_Size;
+          main.c   118    #pragma section
+          main.c   119    
+          main.c   120    #pragma section _TOP
+          main.c   121    
+          main.c   122    //****************************************************************************
+          main.c   123    //  InitializeSystem
+          main.c   124    //
+          main.c   125    //  param   :   isAppli   : 1 = Application / 0 = eActivity
+          main.c   126    //              OptionNum : Option Number (only eActivity)
+          main.c   127    //
+          main.c   128    //  retval  :   1 = No error / 0 = Error
+          main.c   129    //
+          main.c   130    //****************************************************************************
+          main.c   131    int InitializeSystem(int isAppli, unsigned short OptionNum)
+P_T 00000000              _InitializeSystem:               ; function: InitializeSystem
+                                                           ; frame size=0
+          main.c   132    {
+          main.c   133        return INIT_ADDIN_APPLICATION(isAppli, OptionNum);
+    00000000 D301                   MOV.L       L367+2,R3  ; _INIT_ADDIN_APPLICATION
+    00000002 432B                   JMP         @R3
+    00000004 0009                   NOP
+    00000006              L367:                             
+    00000006 0000                   .DATA.W     0
+    00000008 <00000000>             .DATA.L     _INIT_ADDIN_APPLICATION
+          main.c   134    }
+          main.c   135    
+          main.c   136    #pragma section
+C   00000000              L305:
     00000000 00                     .DATA.B     H'00
     00000001 0000012B01             .DATAB.B    299,0
              00           
-    0000012C              L391:
+    0000012C              L308:
     0000012C 41006100               .DATA.B     H'41,H'00,H'61,H'00
-    00000130              L393:
-    00000130 3FC9999999             .DATA.L     H'3FC99999,H'9999999A,H'3FD33333,H'33333333,H'40080000,H'00000000
-             99999A3FD3   
-             3333333333   
-             3340080000   
-             00000000     
-    00000148 0000000801             .DATAB.B    8,0
-             00           
-    00000150              L394:
-    00000150 2566                   .SDATA      "%f"
-    00000152 00                     .DATA.B     H'00
-    00000153 00000001               .RES.B      1
-    00000154              L396:
-    00000154 46785152               .SDATA      "FxQR"
-    00000158 00                     .DATA.B     H'00
-    00000159 00000001               .RES.B      1
-    0000015A 00000002               .RES.W      1
-    0000015C              L407:
-    0000015C 41626F7574             .SDATA      "About"
-    00000161 00                     .DATA.B     H'00
-    00000162 00000002               .RES.W      1
-    00000164              L408:
-    00000164 4F7269673A             .SDATA      "Orig:github.com"
+    00000130              L310:
+    00000130 46785152               .SDATA      "FxQR"
+    00000134 00                     .DATA.B     H'00
+    00000135 00000001               .RES.B      1
+    00000136 00000002               .RES.W      1
+    00000138              L322:
+    00000138 41626F7574             .SDATA      "About"
+    0000013D 00                     .DATA.B     H'00
+    0000013E 00000002               .RES.W      1
+    00000140              L323:
+    00000140 4F7269673A             .SDATA      "Orig:github.com"
              6769746875   
              622E636F6D   
-    00000173 00                     .DATA.B     H'00
-    00000174              L409:
-    00000174 2F626A6775             .SDATA      "/bjguillot/qr"
+    0000014F 00                     .DATA.B     H'00
+    00000150              L324:
+    00000150 2F626A6775             .SDATA      "/bjguillot/qr"
              696C6C6F74   
              2F7172       
-    00000181 00                     .DATA.B     H'00
-    00000182 00000002               .RES.W      1
-    00000184              L410:
-    00000184 4D6F646966             .SDATA      "ModifiedBy 1149761294"
+    0000015D 00                     .DATA.B     H'00
+    0000015E 00000002               .RES.W      1
+    00000160              L325:
+    00000160 4D6F646966             .SDATA      "ModifiedBy 1149761294"
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    9
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
              6965644279   
              2031313439   
              3736313239   
              34           
-    00000199 00                     .DATA.B     H'00
+    00000175 00                     .DATA.B     H'00
 B_B 00000000              _BR_Size:                        ; static: BR_Size
     00000000 00000004               .RES.L      1
 
@@ -592,7 +551,48 @@ B_B 00000000              _BR_Size:                        ; static: BR_Size
 
 
 
-SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Oct-2017 13:47:56  PAGE    1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 03-Dec-2017 20:13:15  PAGE    1
 
 
 ******** STATISTICS INFORMATION ********
@@ -601,23 +601,23 @@ SH SERIES C/C++ Compiler (Ver. 6.0C)                                            
 ********** ERROR INFORMATION ***********
 
 NUMBER OF ERRORS:           0
-NUMBER OF WARNINGS:         2
+NUMBER OF WARNINGS:         1
 
 
 
 
 ******* SOURCE LINE INFORMATION ********
 
-COMPILED SOURCE LINE:      137
+COMPILED SOURCE LINE:      136
 
 
 
 ******* SECTION SIZE INFORMATION *******
 
-PROGRAM  SECTION (P):                               00000268 Byte(s)
+PROGRAM  SECTION (P):                               00000220 Byte(s)
 PROGRAM  SECTION (P_BR_Size):                       00000000 Byte(s)
 PROGRAM  SECTION (P_TOP):                           0000000C Byte(s)
-CONSTANT SECTION (C):                               0000019A Byte(s)
+CONSTANT SECTION (C):                               00000176 Byte(s)
 CONSTANT SECTION (C_BR_Size):                       00000000 Byte(s)
 CONSTANT SECTION (C_TOP):                           00000000 Byte(s)
 DATA     SECTION (D):                               00000000 Byte(s)
@@ -627,15 +627,15 @@ BSS      SECTION (B):                               00000000 Byte(s)
 BSS      SECTION (B_BR_Size):                       00000004 Byte(s)
 BSS      SECTION (B_TOP):                           00000000 Byte(s)
 
- TOTAL PROGRAM SIZE: 00000412 Byte(s)
+ TOTAL PROGRAM SIZE: 000003A6 Byte(s)
 
 
 
 ********** LABEL INFORMATION ***********
 
-NUMBER OF EXTERNAL REFERENCE SYMBOLS:           12
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            8
 NUMBER OF EXTERNAL DEFINITION SYMBOLS:           3
-NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            44
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            40
 
 
 
@@ -661,5 +661,5 @@ NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            44
 *** COMMAND PARAMETER ***
 
 
-  -subcommand=C:\Users\Lenovo\AppData\Local\Temp\hmk7D25.tmp 
+  -subcommand=C:\Users\Lenovo\AppData\Local\Temp\hmk8505.tmp 
 
